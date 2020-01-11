@@ -10,24 +10,22 @@ dibujarCuadrado(300,"red");
 
 function DibujarPanoramica()
 {
-//Patron 
-//dibujarLinea("blue",0,0,10,300);
-//dibujarLinea("blue",0,10,20,300);
-//dibujarLinea("blue",0,20,30,300);
-var lineas=30;
-var l=0;
-var yi;
-var xf;
-//yi= 10 * l
-//xf = 10 * (l + 1);
-for(l=0; l<lineas; l++)
-{
-    yi= 10 * l;
-    xf =10 * (l + 1 );
-    dibujarLinea("#AAF",0,yi,xf,300);    
-}
-
-
+    var lineas=30;
+    var yi;
+    var xf;
+    var xi;
+    var t=30;
+    for(var l=0; l<lineas; l++)
+    {
+        yi= 10 * l;
+        xf =10 * (l + 1 );
+        xi = 10 * t;
+        dibujarLinea("blue",0,yi,xf,300);    
+        dibujarLinea("red",300,yi, xf,0);
+        dibujarLinea("green",0,yi, xi,0);
+        dibujarLinea("violet",300,yi, xi,300);    
+        t--;
+    }
 }
 
 function dibujarLinea(color, xinicial, yinicial, xfinal, yfinal)
@@ -117,4 +115,4 @@ function s5()
 }
 
 console.log(d);
-console.log(lienzo);
+
