@@ -20,12 +20,11 @@ var yi;
 var xf;
 //yi= 10 * l
 //xf = 10 * (l + 1);
-while(l<lineas)
+for(l=0; l<lineas; l++)
 {
     yi= 10 * l;
     xf =10 * (l + 1 );
-    dibujarLinea("#AAF",0,yi,xf,300);
-    l++;
+    dibujarLinea("#AAF",0,yi,xf,300);    
 }
 
 
