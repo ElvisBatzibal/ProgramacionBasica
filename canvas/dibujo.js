@@ -1,11 +1,35 @@
 var d= document.getElementById("dibujito");
 var lienzo= d.getContext("2d"); //Area donde se dibujarà
 
-dibujarLinea("pink",10,300,220,10);
-dibujarLinea("yellow",300,10,10,220);
+DibujarPanoramica();
+//dibujarLinea("pink",10,300,220,10);
+//dibujarLinea("yellow",300,10,10,220);
 //s4();
-s5();
+//s5();
 dibujarCuadrado(300,"red");
+
+function DibujarPanoramica()
+{
+//Patron 
+//dibujarLinea("blue",0,0,10,300);
+//dibujarLinea("blue",0,10,20,300);
+//dibujarLinea("blue",0,20,30,300);
+var lineas=30;
+var l=0;
+var yi;
+var xf;
+//yi= 10 * l
+//xf = 10 * (l + 1);
+while(l<lineas)
+{
+    yi= 10 * l;
+    xf =10 * (l + 1 );
+    dibujarLinea("#AAF",0,yi,xf,300);
+    l++;
+}
+
+
+}
 
 function dibujarLinea(color, xinicial, yinicial, xfinal, yfinal)
 {
