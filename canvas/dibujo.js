@@ -1,30 +1,34 @@
+var txt_cantidad= document.getElementById("txt_cantidad");
+var btn_dibujar= document.getElementById("btn_dibujar");
+btn_dibujar.addEventListener("click",dibujarTorreEIffel);//Escuchador de eventos
+
 var d= document.getElementById("dibujito");
 var lienzo= d.getContext("2d"); //Area donde se dibujarà
+var anchocanvas = d.clientWidth;
 
-DibujarPanoramica();
+dibujarCuadrado(anchocanvas,"red");
 //dibujarLinea("pink",10,300,220,10);
 //dibujarLinea("yellow",300,10,10,220);
 //s4();
 //s5();
-dibujarCuadrado(300,"red");
-
-function DibujarPanoramica()
-{
-    var lineas=30;
-    var yi;
-    var xf;
-    var xi;
-    var t=30;
-    for(var l=0; l<lineas; l++)
+function dibujarTorreEIffel()
+{ 
+    var Cantidad= parseInt(txt_cantidad.value);
+    var EspacionLineas = anchocanvas/ Cantidad;   
+    if(Cantidad>0)
     {
-        yi= 10 * l;
-        xf =10 * (l + 1 );
-        xi = 10 * t;
-        dibujarLinea("blue",0,yi,xf,300);    
-        dibujarLinea("red",300,yi, xf,0);
-        dibujarLinea("green",0,yi, xi,0);
-        dibujarLinea("violet",300,yi, xi,300);    
-        t--;
+        var lineas=Cantidad;
+        var yi;
+        var xf;   
+        for(var l=0; l<lineas; l++)
+        {
+            yi= EspacionLineas * l;
+            xf =EspacionLineas * (l + 1 );          
+            dibujarLinea("blue",0,yi,xf,300);    
+            dibujarLinea("red",300,yi, xf,0);          
+        }
+    }else{
+        alert("Cantidad inválida!");
     }
 }
 
@@ -114,5 +118,4 @@ function s5()
     dibujarLinea(color,0, 262.5, 300, 262.5);
 }
 
-console.log(d);
 
